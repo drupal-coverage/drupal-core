@@ -50,7 +50,7 @@ install:
 
 - composer install
 - composer require security-checker
-- composer require drupal/core
+- composer require drupal/core:$DRUPAL_VERSION
 
 before_script:
 
