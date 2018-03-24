@@ -41,13 +41,16 @@ install:
 # - bash composer_create_drupal-project.bash
 - composer create-project --no-install symfony/skeleton $DRUPAL_PROJECT_DIR $SKELETON_VERSION
 - if [[ -v $DRUPAL_PROJECT_DIR ]]; then cd $DRUPAL_PROJECT_DIR; else cd skeleton; fi;
-- composer require security-checker
-- composer require drupal/core
 
 - cp composer.json ~
 - pushd ~
+- composer install
 - composer require security-checker
 - popd
+
+- composer install
+- composer require security-checker
+- composer require drupal/core
 
 before_script:
 
